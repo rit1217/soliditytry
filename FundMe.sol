@@ -25,11 +25,23 @@ contract FundMe {
         return priceFeed.version();
     }
 
+    //return current price of ETH in terms of USD
     function getPrice() public view returns (uint256) {
         AggregatorV3Interface priceFeed = AggregatorV3Interface(0x8A753747A1Fa494EC906cE90E9f37563A8AF630e);
         //latestRoundData() returns tuple of these data
-        (uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound) = priceFeed.latestRoundData();
+        //(uint80 roundId, int256 answer, uint256 startedAt, uint256 updatedAt, uint80 answeredInRound) = priceFeed.latestRoundData();
+        (, int256 answer, , ,) = priceFeed.latestRoundData();
         //type casting
         return uint256(answer);
+        //return as 8 decimals
+        //e.g. 248255877123 = 2482.55877123 USD
+    }
+
+    // 10^9 wei = 1 gwei
+    function getConversionRate(uint256 ethAmount) public view returns (uint256) {
+        uint256 ethPrice = getPrice();
+        uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
+        //with 18 decimals
+        return ethAmountInUsd;
     }
 }
