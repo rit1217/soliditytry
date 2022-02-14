@@ -3,19 +3,33 @@
 pragma solidity >=0.6.6 <0.9.0;
 
 //have to be deploy in testnet
-//import chainlink code
+//import chainlink code (library)
 import "@chainlink/contracts/src/v0.6/interfaces/AggregatorV3Interface.sol";
-
+import "@chainlink/contracts/src/v0.6/vendor/SafeMathChainlink.sol";
 //send fund to contract = the funded contract is now the owner of that ether
 contract FundMe {
-
+    //safemathchainlinkn does not allow overflow
+    using SafeMathChainlink for uint256;
     mapping(address => uint256) public addressToAmountFunded;
+    address[] public funders;
+
+    address public owner;
+    //execute immediately when deploy the contract
+    constructor() public {
+        owner = msg.sender;
+    }
+
     //payable : function can be use to pay (assocciate with value(wei/gwei/etc.))
     function fund() public payable {
+        //set min USD = 50 USD as 18 decimals
+        uint256 minimumUSD = 50 * 10 ** 18;
+        //check the truthyness
+        require(getConversionRate(msg.value) >= minimumUSD);
         //keywords in every contract call in every transaction :
         //msg.sender  :  sender of the function call
         //msg.value   : how much they send
         addressToAmountFunded[msg.sender] += msg.value;
+        funders.push(msg.sender);
         // what ETH -> USD conversion rate
     }
 
@@ -43,5 +57,23 @@ contract FundMe {
         uint256 ethAmountInUsd = (ethPrice * ethAmount) / 1000000000000000000;
         //with 18 decimals
         return ethAmountInUsd;
+    }
+
+    //only want the contract admin/owner
+    modifier onlyOwner {
+        require(msg.sender == owner);
+        _; //rest of the code
+    }
+
+    function withdraw() payable onlyOwner public {
+        //transfer ETH from any account to the caller(msg.sender)
+        //this = current contract
+        msg.sender.transfer(address(this).balance);
+        //set everyone balance to 0
+        for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
+            address funder = funders[funderIndex];
+            addressToAmountFunded[funder] = 0;
+        }
+        funders = new address[](0);
     }
 }
