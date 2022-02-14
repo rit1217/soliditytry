@@ -1,0 +1,220 @@
+{
+    "contractName": "Overflow",
+    "abi": [
+        {
+            "inputs": [],
+            "name": "overflow",
+            "outputs": [
+                {
+                    "internalType": "uint8",
+                    "name": "",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.6.0+commit.26b70077\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"overflow\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"c:/Users/Phurit/Desktop/Folders/Work/Year 3 Sem 2/Solidity/soliditytry/web3_py_simple_storage/Overflow.sol\":\"Overflow\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"c:/Users/Phurit/Desktop/Folders/Work/Year 3 Sem 2/Solidity/soliditytry/web3_py_simple_storage/Overflow.sol\":{\"keccak256\":\"0xec99c5f3f1d42e79b357076dc8639e3b5866b43b52c2d6920b55237a0c74057e\",\"urls\":[\"bzz-raw://feda3a6b14b401b29117185c6621e2c25e36288a88d07a5a9fa317e41e5d06d6\",\"dweb:/ipfs/QmPGqL9kfQExqSAbDCWWVVUj3RZRNpwBf3Bq16jTbrprWe\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b5060838061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060275760003560e01c80624264c314602c575b600080fd5b60326048565b6040805160ff9092168252519081900360200190f35b60ff9056fea2646970667358221220b2a5c806599b96d9d8dadcb9dad53f27905aabac43411cf0490937ff447b9cac64736f6c63430006000033",
+    "deployedBytecode": "6080604052348015600f57600080fd5b506004361060275760003560e01c80624264c314602c575b600080fd5b60326048565b6040805160ff9092168252519081900360200190f35b60ff9056fea2646970667358221220b2a5c806599b96d9d8dadcb9dad53f27905aabac43411cf0490937ff447b9cac64736f6c63430006000033",
+    "sourceMap": "62:203:1:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:203:1;;;;;;;",
+    "deployedSourceMap": "62:203:1:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;62:203:1;;;;;;;;;;;;;;;;;;;89:173;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;192:3;89:173;:::o",
+    "sourcePath": "c:/Users/Phurit/Desktop/Folders/Work/Year 3 Sem 2/Solidity/soliditytry/web3_py_simple_storage/Overflow.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.6.0+commit.26b70077"
+    },
+    "ast": {
+        "absolutePath": "c:/Users/Phurit/Desktop/Folders/Work/Year 3 Sem 2/Solidity/soliditytry/web3_py_simple_storage/Overflow.sol",
+        "exportedSymbols": {
+            "Overflow": [
+                15
+            ]
+        },
+        "id": 16,
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 2,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.6",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "35:23:1"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "documentation": null,
+                "fullyImplemented": true,
+                "id": 15,
+                "linearizedBaseContracts": [
+                    15
+                ],
+                "name": "Overflow",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "body": {
+                            "id": 13,
+                            "nodeType": "Block",
+                            "src": "137:125:1",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        8
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 8,
+                                            "name": "big",
+                                            "nodeType": "VariableDeclaration",
+                                            "overrides": null,
+                                            "scope": 13,
+                                            "src": "180:9:1",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint8",
+                                                "typeString": "uint8"
+                                            },
+                                            "typeName": {
+                                                "id": 7,
+                                                "name": "uint8",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "180:5:1",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint8",
+                                                    "typeString": "uint8"
+                                                }
+                                            },
+                                            "value": null,
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 10,
+                                    "initialValue": {
+                                        "argumentTypes": null,
+                                        "hexValue": "323535",
+                                        "id": 9,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": true,
+                                        "kind": "number",
+                                        "lValueRequested": false,
+                                        "nodeType": "Literal",
+                                        "src": "192:3:1",
+                                        "subdenomination": null,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_rational_255_by_1",
+                                            "typeString": "int_const 255"
+                                        },
+                                        "value": "255"
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "180:15:1"
+                                },
+                                {
+                                    "expression": {
+                                        "argumentTypes": null,
+                                        "id": 11,
+                                        "name": "big",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 8,
+                                        "src": "251:3:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint8",
+                                            "typeString": "uint8"
+                                        }
+                                    },
+                                    "functionReturnParameters": 6,
+                                    "id": 12,
+                                    "nodeType": "Return",
+                                    "src": "244:10:1"
+                                }
+                            ]
+                        },
+                        "documentation": null,
+                        "functionSelector": "004264c3",
+                        "id": 14,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "overflow",
+                        "nodeType": "FunctionDefinition",
+                        "overrides": null,
+                        "parameters": {
+                            "id": 3,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "106:2:1"
+                        },
+                        "returnParameters": {
+                            "id": 6,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 5,
+                                    "name": "",
+                                    "nodeType": "VariableDeclaration",
+                                    "overrides": null,
+                                    "scope": 14,
+                                    "src": "130:5:1",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint8",
+                                        "typeString": "uint8"
+                                    },
+                                    "typeName": {
+                                        "id": 4,
+                                        "name": "uint8",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "130:5:1",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint8",
+                                            "typeString": "uint8"
+                                        }
+                                    },
+                                    "value": null,
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "129:7:1"
+                        },
+                        "scope": 15,
+                        "src": "89:173:1",
+                        "stateMutability": "view",
+                        "virtual": false,
+                        "visibility": "public"
+                    }
+                ],
+                "scope": 16,
+                "src": "62:203:1"
+            }
+        ],
+        "src": "35:230:1"
+    },
+    "functionHashes": {
+        "overflow()": "004264c3"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "26200",
+            "executionCost": "81",
+            "totalCost": "26281"
+        },
+        "external": {
+            "overflow()": "185"
+        }
+    }
+}

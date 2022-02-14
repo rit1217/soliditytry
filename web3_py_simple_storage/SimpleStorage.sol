@@ -33,31 +33,27 @@ contract SimpleStorage {
     //map string to int
     mapping(string => uint256) public nameToFavoriteNumber;
 
-    //define public function
-    function store(uint256 _favoriteNumber) public {
-        favoriteNumber = _favoriteNumber;
-    }
-    
-
     People public person = People({favoriteNumber: 2, name: "Patrick"});
+
     //define public function
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
     }
+
     // view and pure are non state changing function call
-    function retrieve() public view returns(uint256){
+    function retrieve() public view returns (uint256) {
         return favoriteNumber;
     }
 
     function plus(uint256 favoriteNumber2) public pure {
-        favoriteNumber2 + favoriteNumber2;    // not be saved 
+        favoriteNumber2 + favoriteNumber2; // not be saved
     }
 
     //string : in Solidity is array of bytes
     //memory keyword : data will only be stored during the execution of the function
     //storage keyword : data will be persisted after the function executed
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
-        people.push(People({favoriteNumber:_favoriteNumber, name:_name}));
+        people.push(People({favoriteNumber: _favoriteNumber, name: _name}));
         nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
